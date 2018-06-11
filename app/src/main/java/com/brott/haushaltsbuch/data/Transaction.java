@@ -3,6 +3,7 @@ package com.brott.haushaltsbuch.data;
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
+import android.os.TransactionTooLargeException;
 import android.support.annotation.NonNull;
 
 @Entity(tableName = "transaction")
@@ -94,5 +95,33 @@ public class Transaction {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    @Override
+    public String toString() {
+        return "accountName: " + this.accountName + ", accountType: " + this.accountType + ", category: " + this.category + ", note: " +
+                this.note + ", amount: " + this.amount + ", date: " + this.date;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Transaction)) return false;
+
+        Transaction transaction = (Transaction) o;
+
+        return transaction.getAccountName().equals(this.getAccountName()) && transaction.getAccountType().equals(this.getAccountType()) &&
+                (transaction.getId() == this.getId());
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 17;
+        result = 31 * result * accountName.hashCode();
+        result = 31 * result * accountType.hashCode();
+        result = 31 * result * id;
+
+        return result;
+
     }
 }
