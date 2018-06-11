@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Haushaltsbuch</string>
+
+    <!-- Types of Accounts -->
+    <string name="zahlungskonten">Zahlungskonten</string>
+    <string name="sparkonten">Sparkonten</string>
+
+    <!-- Accounts -->
+    <string name="bargeld">Bargeld</string>
+    <string name="girokonto">Girokonto</string>
+    <string name="sparguthaben">Sparguthaben</string>
+    <string name="depot">Depot</string>
+
+    <!-- Categories -->
+    <string-array name="categories">
+        <item>Wohnung</item>
+        <item>Lebensmittel</item>
+        <item>Sozialleben</item>
+        <item>Auto</item>
+        <item>Reise</item>
+        <item>Geschenk</item>
+        <item>Sonstiges</item>
+    </string-array>
+
+    <!-- Placeholder -->
+    <string name="placeholder">0.00 €</string>
+
+</resources>
