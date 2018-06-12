@@ -49,12 +49,7 @@ public class AccountFragment extends Fragment {
             @Override
             public void onChanged(@Nullable final List<AccountInfo> accountInfoList) {
 
-                if (accountInfoList != null && accountInfoList.size() > 2) {
-
-                    for (AccountInfo aI : accountInfoList) {
-                        LOGGER.info(aI.getAccountName() + ": " + aI.getAmount());
-                    }
-
+                if (accountInfoList != null && accountInfoList.size() >= 0) {
                     setAccounts(accountInfoList);
 
                     mAccountViewData = new AccountViewData(
@@ -76,7 +71,7 @@ public class AccountFragment extends Fragment {
     }
 
     private double calculateTotalAssets(List<AccountInfo> accountInfoList) {
-        double sum = 0.0;
+        double sum = 0.0d;
 
         for (AccountInfo accountInfo : accountInfoList) {
             sum += accountInfo.getAmount();
@@ -86,10 +81,11 @@ public class AccountFragment extends Fragment {
     }
 
     private double calculateSavings(List<AccountInfo> accountInfoList) {
-        double sum = 0.0;
+        double sum = 0.0d;
 
         for (AccountInfo accountInfo : accountInfoList) {
             if (accountInfo.getAccountType().equals(AccountTypeEnum.SAVINGS_ACCOUNT.toString())) {
+
                 sum += accountInfo.getAmount();
             }
         }
@@ -98,10 +94,11 @@ public class AccountFragment extends Fragment {
     }
 
     private double calculateLiquidAssets(List<AccountInfo> accountInfoList) {
-        double sum = 0.0;
+        double sum = 0.0d;
 
         for (AccountInfo accountInfo : accountInfoList) {
             if (accountInfo.getAccountType().equals(AccountTypeEnum.ACCOUNT_FOR_PAYMENTS.toString())) {
+
                 sum += accountInfo.getAmount();
             }
         }
@@ -111,13 +108,13 @@ public class AccountFragment extends Fragment {
 
     private void setAccounts(List<AccountInfo> accountInfoList) {
         for (AccountInfo aI : accountInfoList) {
-            if (aI.getAccountName().equals(AccountNameEnum.MONEY)) {
+            if (aI.getAccountName().equals(AccountNameEnum.MONEY.toString())) {
                 moneyAmount = aI.getAmount();
-            } else if (aI.getAccountName().equals(AccountNameEnum.CHECK_ACCOUNT)) {
+            } else if (aI.getAccountName().equals(AccountNameEnum.CHECK_ACCOUNT.toString())) {
                 checkAccountAmount = aI.getAmount();
-            } else if (aI.getAccountName().equals(AccountNameEnum.SAVINGS_ACCOUNT)) {
+            } else if (aI.getAccountName().equals(AccountNameEnum.SAVINGS_ACCOUNT.toString())) {
                 savingsAmount = aI.getAmount();
-            } else if (aI.getAccountName().equals(AccountNameEnum.PORTFOLIO)) {
+            } else if (aI.getAccountName().equals(AccountNameEnum.PORTFOLIO.toString())) {
                 portfolioAmount = aI.getAmount();
             }
         }

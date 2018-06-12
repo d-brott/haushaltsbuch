@@ -3,6 +3,8 @@
 
     <data>
 
+        <import type="com.brott.haushaltsbuch.utilities.HelperMethods" />
+
         <variable
             name="accountViewData"
             type="com.brott.haushaltsbuch.account.AccountViewData" />
@@ -20,19 +22,19 @@
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
             android:paddingTop="20dp"
-            android:text="Gesamtvermögen"
+            android:text="@string/gesamtvermoegen"
             android:textAlignment="center"
             android:textAllCaps="true"
             android:textSize="14sp" />
 
         <TextView
             android:id="@+id/assets_text_view"
-            android:text="@{Double.toString(accountViewData.totalAssets), default=@string/placeholder}"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="10dp"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
+            android:text="@{HelperMethods.formatAmount(accountViewData.totalAssets), default=@string/placeholder}"
             android:textAlignment="center"
             android:textSize="28sp" />
 
@@ -62,17 +64,17 @@
                             android:paddingBottom="10dp"
                             android:paddingLeft="10dp"
                             android:paddingTop="10dp"
-                            android:text="Zahlungskonten"
+                            android:text="@string/zahlungskonten"
                             android:textAllCaps="true"
                             android:textSize="14sp" />
 
                         <TextView
                             android:id="@+id/payments_sum_text_view"
-                            android:text="@{Double.toString(accountViewData.totalLiquidAssets), default=@string/placeholder}"
                             android:layout_gravity="right"
                             android:paddingBottom="10dp"
                             android:paddingRight="10dp"
                             android:paddingTop="10dp"
+                            android:text="@{HelperMethods.formatAmount(accountViewData.totalLiquidAssets), default=@string/placeholder}"
                             android:textSize="14sp"
                             android:textStyle="bold" />
                     </TableRow>
@@ -101,7 +103,7 @@
                             android:paddingBottom="10dp"
                             android:paddingRight="10dp"
                             android:paddingTop="10dp"
-                            android:text="@{Double.toString(accountViewData.moneyAmount), default=@string/placeholder}"
+                            android:text="@{HelperMethods.formatAmount(accountViewData.moneyAmount), default=@string/placeholder}"
                             android:textSize="14sp" />
                     </TableRow>
 
@@ -119,7 +121,7 @@
                             android:layout_gravity="right"
                             android:paddingBottom="10dp"
                             android:paddingRight="10dp"
-                            android:text="@{Double.toString(accountViewData.checkAccountAmount), default=@string/placeholder}"
+                            android:text="@{HelperMethods.formatAmount(accountViewData.checkAccountAmount), default=@string/placeholder}"
                             android:textSize="14sp" />
                     </TableRow>
                 </TableLayout>
@@ -156,17 +158,17 @@
                             android:paddingBottom="10dp"
                             android:paddingLeft="10dp"
                             android:paddingTop="10dp"
-                            android:text="Sparkonten"
+                            android:text="@string/sparkonten"
                             android:textAllCaps="true"
                             android:textSize="14sp" />
 
                         <TextView
                             android:id="@+id/savings_sum_text_view"
-                            android:text="@{Double.toString(accountViewData.totalSavings), default=@string/placeholder}"
                             android:layout_gravity="right"
                             android:paddingBottom="10dp"
                             android:paddingRight="10dp"
                             android:paddingTop="10dp"
+                            android:text="@{HelperMethods.formatAmount(accountViewData.totalSavings), default=@string/placeholder}"
                             android:textSize="14sp"
                             android:textStyle="bold" />
                     </TableRow>
@@ -194,7 +196,7 @@
                             android:paddingBottom="10dp"
                             android:paddingRight="10dp"
                             android:paddingTop="10dp"
-                            android:text="@{Double.toString(accountViewData.savingsAmount), default=@string/placeholder}"
+                            android:text="@{HelperMethods.formatAmount(accountViewData.savingsAmount), default=@string/placeholder}"
                             android:textSize="14sp" />
                     </TableRow>
 
@@ -212,7 +214,7 @@
                             android:layout_gravity="right"
                             android:paddingBottom="10dp"
                             android:paddingRight="10dp"
-                            android:text="@{Double.toString(accountViewData.portfolioAmount), default=@string/placeholder}"
+                            android:text="@{HelperMethods.formatAmount(accountViewData.portfolioAmount), default=@string/placeholder}"
                             android:textSize="14sp" />
                     </TableRow>
                 </TableLayout>
