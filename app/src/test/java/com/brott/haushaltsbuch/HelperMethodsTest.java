@@ -1,6 +1,6 @@
 package com.brott.haushaltsbuch;
 
-import com.brott.haushaltsbuch.utilities.HelperMethods;
+import com.brott.haushaltsbuch.utilities.Utilities;
 
 import org.junit.Test;
 
@@ -10,6 +10,6 @@ public class HelperMethodsTest {
 
     @Test
     public void formatAmountTest() {
-        assertEquals("10,00 €", HelperMethods.formatAmount(10));
+        assertEquals("10,00 €", Utilities.formatAmount(10));
     }
 }

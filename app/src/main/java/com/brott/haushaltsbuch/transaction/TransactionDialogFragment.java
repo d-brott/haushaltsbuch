@@ -13,10 +13,9 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.brott.haushaltsbuch.R;
-import com.brott.haushaltsbuch.account.AccountNameEnum;
-import com.brott.haushaltsbuch.account.AccountTypeEnum;
 import com.brott.haushaltsbuch.data.Transaction;
-import com.brott.haushaltsbuch.utilities.HelperMethods;
+import com.brott.haushaltsbuch.utilities.EditTextUtilities;
+import com.brott.haushaltsbuch.utilities.Utilities;
 
 public class TransactionDialogFragment extends DialogFragment {
 
@@ -62,12 +61,12 @@ public class TransactionDialogFragment extends DialogFragment {
         accountTypeSpinner.setAdapter(accountTypeAdapter);
 
         saveBtn.setOnClickListener(e -> {
-            if (HelperMethods.isEmpty(amountEditTxt)) {
+            if (EditTextUtilities.isEmpty(amountEditTxt)) {
                 amountEditTxt.setError(getResources().getString(R.string.ungueltigerBetrag));
                 return;
 
             } else {
-                if (HelperMethods.isEmpty(noteEditTxt)) {
+                if (EditTextUtilities.isEmpty(noteEditTxt)) {
                     note = "";
                 } else {
                     note = noteEditTxt.getText().toString().trim();
@@ -80,7 +79,7 @@ public class TransactionDialogFragment extends DialogFragment {
 
                 Transaction transaction = new Transaction(
                         selectedAccount,
-                        HelperMethods.determineAccountType(selectedAccount),
+                        Utilities.determineAccountType(selectedAccount),
                         selectedCategory,
                         note,
                         amount,

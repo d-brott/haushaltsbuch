@@ -1,16 +1,9 @@
 package com.brott.haushaltsbuch.data;
 
-import android.arch.persistence.db.SupportSQLiteDatabase;
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
-import android.os.AsyncTask;
-import android.support.annotation.NonNull;
-
-import com.brott.haushaltsbuch.account.AccountNameEnum;
-import com.brott.haushaltsbuch.account.AccountTypeEnum;
-import com.brott.haushaltsbuch.transaction.TransactionCategoryEnum;
 
 @Database(entities = {Transaction.class}, version = 1)
 public abstract class AppDatabase extends RoomDatabase {

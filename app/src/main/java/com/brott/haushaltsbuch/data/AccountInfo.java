@@ -2,8 +2,6 @@ package com.brott.haushaltsbuch.data;
 
 import android.arch.persistence.room.ColumnInfo;
 
-import java.util.Objects;
-
 public class AccountInfo implements Comparable<AccountInfo> {
 
     @ColumnInfo(name = "account_name")

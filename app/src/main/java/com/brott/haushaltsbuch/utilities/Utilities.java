@@ -1,14 +1,12 @@
 package com.brott.haushaltsbuch.utilities;
 
-import android.widget.EditText;
-
 import com.brott.haushaltsbuch.account.AccountNameEnum;
 import com.brott.haushaltsbuch.account.AccountTypeEnum;
 
 import java.text.NumberFormat;
 import java.util.Locale;
 
-public class HelperMethods {
+public class Utilities {
 
     /**
      * transforms parameter into properly formatted currency
@@ -25,11 +23,12 @@ public class HelperMethods {
         return currency;
     }
 
-    public static boolean isEmpty(EditText editText) {
-        String input = editText.getText().toString().trim();
-        return input.length() == 0;
-    }
-
+    /**
+     * determines the correct account type based on the passed in parameter
+     *
+     * @param accountName
+     * @return accountType
+     */
     public static String determineAccountType(String accountName) {
         String accountType = "";
 

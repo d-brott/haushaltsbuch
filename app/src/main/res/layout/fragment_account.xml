@@ -3,7 +3,7 @@
 
     <data>
 
-        <import type="com.brott.haushaltsbuch.utilities.HelperMethods" />
+        <import type="com.brott.haushaltsbuch.utilities.Utilities" />
 
         <variable
             name="accountViewData"
@@ -34,7 +34,7 @@
             android:paddingBottom="10dp"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
-            android:text="@{HelperMethods.formatAmount(accountViewData.totalAssets), default=@string/placeholder}"
+            android:text="@{Utilities.formatAmount(accountViewData.totalAssets), default=@string/placeholder}"
             android:textAlignment="center"
             android:textSize="28sp" />
 
@@ -74,7 +74,7 @@
                             android:paddingBottom="10dp"
                             android:paddingRight="10dp"
                             android:paddingTop="10dp"
-                            android:text="@{HelperMethods.formatAmount(accountViewData.totalLiquidAssets), default=@string/placeholder}"
+                            android:text="@{Utilities.formatAmount(accountViewData.totalLiquidAssets), default=@string/placeholder}"
                             android:textSize="14sp"
                             android:textStyle="bold" />
                     </TableRow>
@@ -103,7 +103,7 @@
                             android:paddingBottom="10dp"
                             android:paddingRight="10dp"
                             android:paddingTop="10dp"
-                            android:text="@{HelperMethods.formatAmount(accountViewData.moneyAmount), default=@string/placeholder}"
+                            android:text="@{Utilities.formatAmount(accountViewData.moneyAmount), default=@string/placeholder}"
                             android:textSize="14sp" />
                     </TableRow>
 
@@ -121,7 +121,7 @@
                             android:layout_gravity="right"
                             android:paddingBottom="10dp"
                             android:paddingRight="10dp"
-                            android:text="@{HelperMethods.formatAmount(accountViewData.checkAccountAmount), default=@string/placeholder}"
+                            android:text="@{Utilities.formatAmount(accountViewData.checkAccountAmount), default=@string/placeholder}"
                             android:textSize="14sp" />
                     </TableRow>
                 </TableLayout>
@@ -168,7 +168,7 @@
                             android:paddingBottom="10dp"
                             android:paddingRight="10dp"
                             android:paddingTop="10dp"
-                            android:text="@{HelperMethods.formatAmount(accountViewData.totalSavings), default=@string/placeholder}"
+                            android:text="@{Utilities.formatAmount(accountViewData.totalSavings), default=@string/placeholder}"
                             android:textSize="14sp"
                             android:textStyle="bold" />
                     </TableRow>
@@ -196,7 +196,7 @@
                             android:paddingBottom="10dp"
                             android:paddingRight="10dp"
                             android:paddingTop="10dp"
-                            android:text="@{HelperMethods.formatAmount(accountViewData.savingsAmount), default=@string/placeholder}"
+                            android:text="@{Utilities.formatAmount(accountViewData.savingsAmount), default=@string/placeholder}"
                             android:textSize="14sp" />
                     </TableRow>
 
@@ -214,7 +214,7 @@
                             android:layout_gravity="right"
                             android:paddingBottom="10dp"
                             android:paddingRight="10dp"
-                            android:text="@{HelperMethods.formatAmount(accountViewData.portfolioAmount), default=@string/placeholder}"
+                            android:text="@{Utilities.formatAmount(accountViewData.portfolioAmount), default=@string/placeholder}"
                             android:textSize="14sp" />
                     </TableRow>
                 </TableLayout>
