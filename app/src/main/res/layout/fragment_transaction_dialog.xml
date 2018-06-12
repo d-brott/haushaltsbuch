@@ -4,9 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="10dp"
+    android:padding="15dp"
     tools:context=".transaction.TransactionFragment">
-
+<!--
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,49 +16,114 @@
             android:id="@+id/money_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/bargeld" />
+            android:text="@string/transaktion" />
 
         <Button
             android:id="@+id/check_account_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/girokonto" />
+            android:text="@string/uebertrag" />
 
-        <Button
-            android:id="@+id/savings_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/sparguthaben" />
+    </LinearLayout>
+-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
 
-        <Button
-            android:id="@+id/portfolio_btn"
-            android:layout_width="wrap_content"
+        <TextView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/depot" />
+            android:text="Konto" />
+
+        <Spinner
+            android:id="@+id/account_type_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 
-    <EditText
-        android:id="@+id/amount_edit_text"
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Betrag" />
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/note_edit_text"
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Kategorie" />
+
+        <Spinner
+            android:id="@+id/category_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Notiz" />
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
 
-    <Spinner
-        android:id="@+id/category_spinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Betrag" />
 
-    <Button
-        android:id="@+id/save_button"
+        <EditText
+            android:id="@+id/amount_edit_text"
+            android:inputType="numberDecimal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Speichern" />
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Notiz" />
+
+        <EditText
+            android:id="@+id/note_edit_text"
+            android:inputType="text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:gravity="right"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/cancel_button"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Abbrechen" />
+
+        <Button
+            android:id="@+id/save_button"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Speichern" />
+
+    </LinearLayout>
+
 
 </LinearLayout>

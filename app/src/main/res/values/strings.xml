@@ -2,6 +2,7 @@
     <string name="app_name">Haushaltsbuch</string>
 
     <!-- Types of Accounts -->
+    <string name="gesamtvermoegen">Gesamtvermögen</string>
     <string name="zahlungskonten">Zahlungskonten</string>
     <string name="sparkonten">Sparkonten</string>
 
@@ -10,6 +11,14 @@
     <string name="girokonto">Girokonto</string>
     <string name="sparguthaben">Sparguthaben</string>
     <string name="depot">Depot</string>
+
+    <!-- Account Array -->
+    <string-array name="accountType">
+        <item>Bargeld</item>
+        <item>Girokonto</item>
+        <item>Sparguthaben</item>
+        <item>Depot</item>
+    </string-array>
 
     <!-- Categories -->
     <string-array name="categories">
@@ -24,5 +33,12 @@
 
     <!-- Placeholder -->
     <string name="placeholder">0.00 €</string>
+
+    <!-- Action -->
+    <string name="transaktion">Transaktion</string>
+    <string name="uebertrag">Übertrag</string>
+
+    <!-- Messages -->
+    <string name="ungueltigerBetrag">Ungültiger Betrag</string>
 
 </resources>
