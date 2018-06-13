@@ -35,7 +35,8 @@
     <string name="placeholder">0.00 €</string>
 
     <!-- Action -->
-    <string name="transaktion">Transaktion</string>
+    <string name="einnahme">Einnahme</string>
+    <string name="ausgabe">Ausgabe</string>
     <string name="uebertrag">Übertrag</string>
 
     <!-- Messages -->

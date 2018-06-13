@@ -55,7 +55,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="@color/colorAccent"
+                    android:background="@color/colorPrimary"
                     android:stretchColumns="1">
 
                     <TableRow>
@@ -66,6 +66,7 @@
                             android:paddingTop="10dp"
                             android:text="@string/zahlungskonten"
                             android:textAllCaps="true"
+                            android:textColor="@color/white"
                             android:textSize="14sp" />
 
                         <TextView
@@ -75,6 +76,7 @@
                             android:paddingRight="10dp"
                             android:paddingTop="10dp"
                             android:text="@{Utilities.formatAmount(accountViewData.totalLiquidAssets), default=@string/placeholder}"
+                            android:textColor="@color/white"
                             android:textSize="14sp"
                             android:textStyle="bold" />
                     </TableRow>
@@ -149,7 +151,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="@color/colorAccent"
+                    android:background="@color/colorPrimary"
                     android:stretchColumns="1">
 
                     <TableRow>
@@ -160,6 +162,7 @@
                             android:paddingTop="10dp"
                             android:text="@string/sparkonten"
                             android:textAllCaps="true"
+                            android:textColor="@color/white"
                             android:textSize="14sp" />
 
                         <TextView
@@ -169,6 +172,7 @@
                             android:paddingRight="10dp"
                             android:paddingTop="10dp"
                             android:text="@{Utilities.formatAmount(accountViewData.totalSavings), default=@string/placeholder}"
+                            android:textColor="@color/white"
                             android:textSize="14sp"
                             android:textStyle="bold" />
                     </TableRow>
