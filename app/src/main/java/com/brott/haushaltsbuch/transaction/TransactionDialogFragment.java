@@ -1,6 +1,7 @@
 package com.brott.haushaltsbuch.transaction;
 
 
+import android.app.ActionBar;
 import android.arch.lifecycle.ViewModelProvider;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
@@ -28,11 +29,26 @@ public class TransactionDialogFragment extends DialogFragment {
 
     private Button saveBtn;
     private Button cancelBtn;
+    private Button expenseBtn;
+    private Button incomeBtn;
+    private Button transferBtn;
 
     private String selectedAccount;
     private String selectedCategory;
     private String note;
     private double amount;
+
+    // expense is default
+    private boolean isExpense = true;
+    private boolean isIncome;
+    private boolean isTransfer;
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        getDialog().getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -43,12 +59,20 @@ public class TransactionDialogFragment extends DialogFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_transaction_dialog, container, false);
 
+        // Spinner
         categorySpinner = root.findViewById(R.id.category_spinner);
+        accountTypeSpinner = root.findViewById(R.id.account_type_spinner);
+
+        // EditText
         amountEditTxt = root.findViewById(R.id.amount_edit_text);
         noteEditTxt = root.findViewById(R.id.note_edit_text);
+
+        // Buttons
         saveBtn = root.findViewById(R.id.save_button);
         cancelBtn = root.findViewById(R.id.cancel_button);
-        accountTypeSpinner = root.findViewById(R.id.account_type_spinner);
+        incomeBtn = root.findViewById(R.id.income_btn);
+        expenseBtn = root.findViewById(R.id.expense_btn);
+        transferBtn = root.findViewById(R.id.transfer_btn);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(),
                 R.array.categories, android.R.layout.simple_spinner_item);
@@ -72,7 +96,11 @@ public class TransactionDialogFragment extends DialogFragment {
                     note = noteEditTxt.getText().toString().trim();
                 }
 
-                amount = Double.parseDouble(amountEditTxt.getText().toString().trim());
+                if (isExpense) {
+                    amount = Double.parseDouble("-" + amountEditTxt.getText().toString().trim());
+                } else if (isIncome) {
+                    amount = Double.parseDouble(amountEditTxt.getText().toString().trim());
+                }
 
                 selectedAccount = accountTypeSpinner.getSelectedItem().toString();
                 selectedCategory = categorySpinner.getSelectedItem().toString();
@@ -96,7 +124,27 @@ public class TransactionDialogFragment extends DialogFragment {
             getDialog().dismiss();
         });
 
+        incomeBtn.setOnClickListener(e -> {
+            isIncome = true;
+            isExpense = false;
+            isTransfer = false;
+        });
+
+        expenseBtn.setOnClickListener(e -> {
+            isIncome = false;
+            isExpense = true;
+            isTransfer = false;
+        });
+
+        transferBtn.setOnClickListener(e -> {
+            isIncome = false;
+            isExpense = false;
+            isTransfer = true;
+        });
+
         return root;
     }
+
+
 }
 
