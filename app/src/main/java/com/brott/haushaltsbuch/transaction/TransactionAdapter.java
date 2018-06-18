@@ -12,6 +12,8 @@ import com.brott.haushaltsbuch.R;
 import com.brott.haushaltsbuch.data.Transaction;
 
 import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 public class TransactionAdapter extends BaseAdapter {
@@ -24,6 +26,7 @@ public class TransactionAdapter extends BaseAdapter {
     private TextView accountBalance;
     private TextView transactionCategory;
     private TextView transactionNote;
+    private TextView dateOfTransaction;
 
     private Transaction transaction;
 
@@ -57,18 +60,18 @@ public class TransactionAdapter extends BaseAdapter {
         accountBalance = root.findViewById(R.id.account_balance_text_view);
         transactionCategory = root.findViewById(R.id.transaction_category_text_view);
         transactionNote = root.findViewById(R.id.transaction_note_text_view);
+        dateOfTransaction = root.findViewById(R.id.date_of_transaction_text_view);
 
         transaction = (Transaction) getItem(position);
-
 
         accountName.setText(transaction.getAccountName());
         accountBalance.setText(formatAmount(transaction.getAmount(), accountBalance));
         transactionCategory.setText(transaction.getCategory());
         transactionNote.setText(transaction.getNote());
+        dateOfTransaction.setText(formatDate(transaction.getDate()));
 
         return root;
     }
-
 
     private String formatAmount(double amount, TextView textView) {
         DecimalFormat df = new DecimalFormat("#.00");
@@ -81,5 +84,10 @@ public class TransactionAdapter extends BaseAdapter {
         }
 
         return formattedAmount + " €";
+    }
+
+    private String formatDate(Date date) {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
+        return sdf.format(date);
     }
 }

@@ -18,6 +18,8 @@ import com.brott.haushaltsbuch.data.Transaction;
 import com.brott.haushaltsbuch.utilities.EditTextUtilities;
 import com.brott.haushaltsbuch.utilities.Utilities;
 
+import java.util.Date;
+
 public class TransactionDialogFragment extends DialogFragment {
 
     private TransactionViewModel transactionViewModel;
@@ -111,7 +113,7 @@ public class TransactionDialogFragment extends DialogFragment {
                         selectedCategory,
                         note,
                         amount,
-                        "30.05.2018");
+                        new Date());
 
                 transactionViewModel = ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication()).create(TransactionViewModel.class);
                 transactionViewModel.insert(transaction);

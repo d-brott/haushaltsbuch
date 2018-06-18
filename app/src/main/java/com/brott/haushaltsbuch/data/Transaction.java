@@ -5,6 +5,8 @@ import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
+import java.util.Date;
+
 @Entity(tableName = "transaction")
 public class Transaction {
 
@@ -28,9 +30,9 @@ public class Transaction {
     private double amount;
 
     @ColumnInfo(name = "date")
-    private String date;
+    private Date date;
 
-    public Transaction(String accountName, String accountType, String category, String note, double amount, String date) {
+    public Transaction(String accountName, String accountType, String category, String note, double amount, Date date) {
         this.accountName = accountName;
         this.accountType = accountType;
         this.category = category;
@@ -64,7 +66,7 @@ public class Transaction {
         return amount;
     }
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 
@@ -92,7 +94,7 @@ public class Transaction {
         this.amount = amount;
     }
 
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 

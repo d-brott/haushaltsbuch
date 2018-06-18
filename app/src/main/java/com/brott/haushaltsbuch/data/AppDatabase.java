@@ -3,9 +3,13 @@ package com.brott.haushaltsbuch.data;
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
+import android.arch.persistence.room.TypeConverters;
 import android.content.Context;
 
+import com.brott.haushaltsbuch.utilities.Converters;
+
 @Database(entities = {Transaction.class}, version = 1)
+@TypeConverters({Converters.class})
 public abstract class AppDatabase extends RoomDatabase {
     public abstract TransactionDao transactionDao();
 
