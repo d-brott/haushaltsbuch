@@ -1,2 +1,2 @@
 # haushaltsbuch
-Personal finance app for android
+Personal finance app for Android
